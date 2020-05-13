@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1588757237 source:/home/user/Desktop/tws-cpp/testing/main.cpp
+	<iostream>
+	<fstream>
+	<sstream>
+

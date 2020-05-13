@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="tws-aviad" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/tws-aviad" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/tws-aviad" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add library="pthread" />
+		</Linker>
+		<Unit filename="../AccountSummaryTags.cpp" />
+		<Unit filename="../AccountSummaryTags.h" />
+		<Unit filename="../AvailableAlgoParams.cpp" />
+		<Unit filename="../AvailableAlgoParams.h" />
+		<Unit filename="../CommissionReport.h" />
+		<Unit filename="../CommonDefs.h" />
+		<Unit filename="../Contract.h" />
+		<Unit filename="../ContractCondition.cpp" />
+		<Unit filename="../ContractCondition.h" />
+		<Unit filename="../ContractSamples.cpp" />
+		<Unit filename="../ContractSamples.h" />
+		<Unit filename="../DefaultEWrapper.cpp" />
+		<Unit filename="../DefaultEWrapper.h" />
+		<Unit filename="../DepthMktDataDescription.h" />
+		<Unit filename="../EClient.cpp" />
+		<Unit filename="../EClient.h" />
+		<Unit filename="../EClientMsgSink.h" />
+		<Unit filename="../EClientSocket.cpp" />
+		<Unit filename="../EClientSocket.h" />
+		<Unit filename="../EDecoder.cpp" />
+		<Unit filename="../EDecoder.h" />
+		<Unit filename="../EMessage.cpp" />
+		<Unit filename="../EMessage.h" />
+		<Unit filename="../EMutex.cpp" />
+		<Unit filename="../EMutex.h" />
+		<Unit filename="../EOrderDecoder.cpp" />
+		<Unit filename="../EOrderDecoder.h" />
+		<Unit filename="../EPosixClientSocketPlatform.h" />
+		<Unit filename="../EReader.cpp" />
+		<Unit filename="../EReader.h" />
+		<Unit filename="../EReaderOSSignal.cpp" />
+		<Unit filename="../EReaderOSSignal.h" />
+		<Unit filename="../EReaderSignal.h" />
+		<Unit filename="../ESocket.cpp" />
+		<Unit filename="../ESocket.h" />
+		<Unit filename="../ETransport.h" />
+		<Unit filename="../EWrapper.h" />
+		<Unit filename="../EWrapper_prototypes.h" />
+		<Unit filename="../Execution.h" />
+		<Unit filename="../FAMethodSamples.h" />
+		<Unit filename="../FamilyCode.h" />
+		<Unit filename="../HistogramEntry.h" />
+		<Unit filename="../HistoricalTick.h" />
+		<Unit filename="../HistoricalTickBidAsk.h" />
+		<Unit filename="../HistoricalTickLast.h" />
+		<Unit filename="../IExternalizable.h" />
+		<Unit filename="../Main.cpp" />
+		<Unit filename="../MarginCondition.cpp" />
+		<Unit filename="../MarginCondition.h" />
+		<Unit filename="../NewsProvider.h" />
+		<Unit filename="../OperatorCondition.cpp" />
+		<Unit filename="../OperatorCondition.h" />
+		<Unit filename="../Order.h" />
+		<Unit filename="../OrderCondition.cpp" />
+		<Unit filename="../OrderCondition.h" />
+		<Unit filename="../OrderSamples.cpp" />
+		<Unit filename="../OrderSamples.h" />
+		<Unit filename="../OrderState.h" />
+		<Unit filename="../PercentChangeCondition.cpp" />
+		<Unit filename="../PercentChangeCondition.h" />
+		<Unit filename="../PriceCondition.cpp" />
+		<Unit filename="../PriceCondition.h" />
+		<Unit filename="../PriceIncrement.h" />
+		<Unit filename="../ScannerSubscription.h" />
+		<Unit filename="../ScannerSubscriptionSamples.cpp" />
+		<Unit filename="../ScannerSubscriptionSamples.h" />
+		<Unit filename="../SoftDollarTier.cpp" />
+		<Unit filename="../SoftDollarTier.h" />
+		<Unit filename="../StdAfx.cpp" />
+		<Unit filename="../StdAfx.h" />
+		<Unit filename="../TagValue.h" />
+		<Unit filename="../TestCppClient.cpp" />
+		<Unit filename="../TestCppClient.h" />
+		<Unit filename="../TickAttrib.h" />
+		<Unit filename="../TickAttribBidAsk.h" />
+		<Unit filename="../TickAttribLast.h" />
+		<Unit filename="../TimeCondition.cpp" />
+		<Unit filename="../TimeCondition.h" />
+		<Unit filename="../TwsSocketClientErrors.h" />
+		<Unit filename="../Utils.cpp" />
+		<Unit filename="../Utils.h" />
+		<Unit filename="../VolumeCondition.cpp" />
+		<Unit filename="../VolumeCondition.h" />
+		<Unit filename="../bar.h" />
+		<Unit filename="../executioncondition.cpp" />
+		<Unit filename="../executioncondition.h" />
+		<Unit filename="../makefile" />
+		<Unit filename="../platformspecific.h" />
+		<Unit filename="../resource.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
