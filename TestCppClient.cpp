@@ -147,8 +147,8 @@ void TestCppClient::processMessages()
 	/*****************************************************************/
     /* Below are few quick-to-test examples on the IB API functions grouped by functionality. Uncomment the relevant methods. */
     /*****************************************************************/
-	printf("m_state: %d \n", m_state);
-	std::cout << stockName << stockAmount << std::endl;
+	//printf("m_state: %d \n", m_state);
+	//std::cout << stockName << stockAmount << std::endl;
 	std::ifstream fin("update.txt");
     std::string update;
 
@@ -1387,7 +1387,8 @@ void TestCppClient::reqTickByTickData()
     //m_pClient->reqTickByTickData(20003, ContractSamples::EuropeanStock(), "BidAsk", 0, true);
     //m_pClient->reqTickByTickData(20004, ContractSamples::EurGbpFx(), "MidPoint", 0, false);
 
-    std::cout << "tick!!!!!!!!!!!!!!!!!!!!!!!!!!: " << myPrice << std::endl;
+    //std::cout << "tick!!!!!!!!!!!!!!!!!!!!!!!!!!: " << myPrice << std::endl;
+
     //m_pClient->reqSecDefOptParams(0, "IBM", "", "STK", 8314);
 
     //std::this_thread::sleep_for(std::chrono::seconds(10));
@@ -1511,7 +1512,7 @@ void TestCppClient::error(int id, int errorCode, const std::string& errorString)
 //! [tickprice]
 void TestCppClient::tickPrice( TickerId tickerId, TickType field, double price, const TickAttrib& attribs) {
 	printf( "Tick Price. Ticker Id: %ld, Field: %d, Price: %g, CanAutoExecute: %d, PastLimit: %d, PreOpen: %d\n", tickerId, (int)field, price, attribs.canAutoExecute, attribs.pastLimit, attribs.preOpen);
-    printf("price!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: %g\n", price);
+    //printf("price!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: %g\n", price);
     myPrice = price;
 }
 //! [tickprice]
@@ -1551,7 +1552,7 @@ void TestCppClient::tickEFP(TickerId tickerId, TickType tickType, double basisPo
 void TestCppClient::orderStatus(OrderId orderId, const std::string& status, double filled,
 		double remaining, double avgFillPrice, int permId, int parentId,
 		double lastFillPrice, int clientId, const std::string& whyHeld, double mktCapPrice){
-    printf("Filled!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: %g\n", filled);
+    //printf("Filled!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: %g\n", filled);
     myFilled = filled;
 	//printf("OrderStatus. Id: %ld, Status: %s, Filled: %g, Remaining: %g, AvgFillPrice: %g, PermId: %d, LastFillPrice: %g, ClientId: %d, WhyHeld: %s, MktCapPrice: %g\n", orderId, status.c_str(), filled, remaining, avgFillPrice, permId, lastFillPrice, clientId, whyHeld.c_str(), mktCapPrice);
 }
@@ -1831,8 +1832,8 @@ void TestCppClient::commissionReport( const CommissionReport& commissionReport) 
 
 //! [position]
 void TestCppClient::position( const std::string& account, const Contract& contract, double position, double avgCost) {
-	printf( "Position. %s - Symbol: %s, SecType: %s, Currency: %s, Position: %g, Avg Cost: %g\n", account.c_str(), contract.symbol.c_str(), contract.secType.c_str(), contract.currency.c_str(), position, avgCost);
-    printf("position+++++++++++++++: %g", position);
+	//printf( "Position. %s - Symbol: %s, SecType: %s, Currency: %s, Position: %g, Avg Cost: %g\n", account.c_str(), contract.symbol.c_str(), contract.secType.c_str(), contract.currency.c_str(), position, avgCost);
+    //printf("position+++++++++++++++: %g", position);
     myPos = position;
 }
 //! [position]
@@ -2176,7 +2177,7 @@ void TestCppClient::tickByTickAllLast(int reqId, int tickType, time_t time, doub
     m_pClient->reqPositions();
 
 	//! [reqpositions]
-	std::this_thread::sleep_for(std::chrono::seconds(1));
+	std::this_thread::sleep_for(std::chrono::seconds(0)); //changed by me to zero
     //m_pClient->reqPositions(); // line 750
     //std::cout << "pos:"<< myPos<< std::endl;
 //    std::cout << "price:"<< myPrice<< std::endl;
