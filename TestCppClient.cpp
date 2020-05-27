@@ -70,16 +70,7 @@ TestCppClient::TestCppClient() :
     , m_pReader(0)
     , m_extraAuth(false)
 {
-    struct product {
-    double myPos;
-    double myPrice;
-    double myFilled;
-    } ;
-    product data;
-    data.myPos = 0;
-    data.myPrice = 0;
-    data.myFilled = 0;
-    //printf("pos: ", data.myPos);
+
     std::ifstream fin("data.txt");
     std::string name;
     int amount;
@@ -149,18 +140,19 @@ void TestCppClient::processMessages()
     /*****************************************************************/
 	//printf("m_state: %d \n", m_state);
 	//std::cout << stockName << stockAmount << std::endl;
-	std::ifstream fin("update.txt");
-    std::string update;
 
-    fin >> update;
-    std::cout << "update:" << update << std::endl;
-    fin.close();
-    if (update == "update"){
-        firstPrice = myPrice;
-        std::ofstream MyFile("update.txt");
-        MyFile << "dont";
-        MyFile.close();
-    }
+//	std::ifstream fin("update.txt");
+//    std::string update;
+//
+//    fin >> update;
+//    std::cout << "update:" << update << std::endl;
+//    fin.close();
+//    if (update == "update"){
+//        firstPrice = myPrice;
+//        std::ofstream MyFile("update.txt");
+//        MyFile << "dont";
+//        MyFile.close();
+//    }
 
 	switch (m_state) {
 		case ST_PNLSINGLE:
@@ -1392,7 +1384,8 @@ void TestCppClient::reqTickByTickData()
     //m_pClient->reqSecDefOptParams(0, "IBM", "", "STK", 8314);
 
     //std::this_thread::sleep_for(std::chrono::seconds(10));
-    std::this_thread::sleep_for(std::chrono::seconds(0)); //changed this to 0 from 1
+    //! I took this out for speed
+//    std::this_thread::sleep_for(std::chrono::seconds(0)); //changed this to 0 from 1
 
 	//! [canceltickbytick]
 
@@ -2156,28 +2149,28 @@ void TestCppClient::tickByTickAllLast(int reqId, int tickType, time_t time, doub
 
     }else{
         //std::cout << "price < firstPrice:"<< stockAmount << std::endl;
-        std::cout << "First price:"<< firstPrice<< std::endl;
-        std::cout << "price:"<< myPrice<< std::endl;
-        std::cout << "filled:"<< myFilled<< std::endl;
-        std::cout << "buy:"<< buy<< std::endl;
-        std::cout << ""<< std::endl;
+//        std::cout << "First price:"<< firstPrice<< std::endl;
+//        std::cout << "price:"<< myPrice<< std::endl;
+//        std::cout << "filled:"<< myFilled<< std::endl;
+//        std::cout << "buy:"<< buy<< std::endl;
+//        std::cout << ""<< std::endl;
         if ((price > firstPrice) && (sell == true)){ // && (myFilled ==  stockAmount)
             m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::MarketOrder("BUY", stockAmount));
             buy = true;
             sell = false;
         }
         if (price < firstPrice && buy == true){ //&& myFilled ==  stockAmount
-            std::cout << "++++++++++++++SELL+++++++++++++++++++++:"<< myPos<< std::endl;
+//            std::cout << "++++++++++++++SELL+++++++++++++++++++++:"<< myPos<< std::endl;
             m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::MarketOrder("SELL", stockAmount));
             sell = true;
             buy = false;
         }
         //std::cout << "price:"<< price<< std::endl;
     }
-    m_pClient->reqPositions();
+//    m_pClient->reqPositions();
 
 	//! [reqpositions]
-	std::this_thread::sleep_for(std::chrono::seconds(0)); //changed by me to zero
+//	std::this_thread::sleep_for(std::chrono::seconds(0)); //changed by me to zero
     //m_pClient->reqPositions(); // line 750
     //std::cout << "pos:"<< myPos<< std::endl;
 //    std::cout << "price:"<< myPrice<< std::endl;
