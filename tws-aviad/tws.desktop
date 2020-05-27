@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=tws
+Version=v0.1
+Icon=
+X-Icon-Path=
+Exec=python3 Desktop/tws-cpp/tws-aviad/start.py
+Terminal=true
+Type=Application
