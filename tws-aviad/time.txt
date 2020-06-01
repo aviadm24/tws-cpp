@@ -10,7 +10,8 @@
 22.5 14 min
 24.5 25 min + 30 min (checking why dosn't connect)
 25.5 28 min
-
+27.5 40 min
+31.5 23 min
 
 
 
