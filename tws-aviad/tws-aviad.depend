@@ -29,33 +29,7 @@
 	<ios>
 	<float.h>
 
-1557330714 /home/user/Desktop/tws-cpp/client/StdAfx.h
-	"platformspecific.h"
-	<string>
-	<deque>
-	<vector>
-	<algorithm>
-	<limits.h>
-	<sstream>
-	<iomanip>
-	<stdio.h>
-	<assert.h>
-	<memory>
-	<ostream>
-	<string.h>
-	<assert.h>
-	<atomic>
-	<bitset>
-	<cstdlib>
-	<sstream>
-	<stdexcept>
-	<set>
-	<map>
-	<tuple>
-	<ios>
-	<float.h>
-
-1557330714 /home/user/Desktop/tws-cpp/client/platformspecific.h
+1557330714 /home/user/Desktop/tws-cpp/platformspecific.h
 	<WinSock2.h>
 	<Windows.h>
 	<time.h>
@@ -73,292 +47,6 @@
 1557330708 /home/user/Desktop/tws-cpp/AccountSummaryTags.h
 	<string>
 
-1557330714 source:/home/user/Desktop/tws-cpp/client/ContractCondition.cpp
-	"StdAfx.h"
-	"ContractCondition.h"
-	"EDecoder.h"
-	"EClient.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/ContractCondition.h
-	"OperatorCondition.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/OperatorCondition.h
-	"OrderCondition.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/OrderCondition.h
-	"IExternalizable.h"
-	<string>
-	"platformspecific.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/IExternalizable.h
-	<ios>
-
-1557330714 /home/user/Desktop/tws-cpp/client/EDecoder.h
-	"platformspecific.h"
-	"Contract.h"
-	"HistoricalTick.h"
-	"HistoricalTickBidAsk.h"
-	"HistoricalTickLast.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/Contract.h
-	"TagValue.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/TagValue.h
-	<string>
-	<vector>
-	<memory>
-
-1557330714 /home/user/Desktop/tws-cpp/client/HistoricalTick.h
-
-1557330714 /home/user/Desktop/tws-cpp/client/HistoricalTickBidAsk.h
-	"TickAttribBidAsk.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/TickAttribBidAsk.h
-
-1557330714 /home/user/Desktop/tws-cpp/client/HistoricalTickLast.h
-	"TickAttribLast.h"
-	<string>
-
-1557330714 /home/user/Desktop/tws-cpp/client/TickAttribLast.h
-
-1557330714 /home/user/Desktop/tws-cpp/client/EClient.h
-	<memory>
-	<string>
-	<vector>
-	<ostream>
-	"platformspecific.h"
-	"CommonDefs.h"
-	"TagValue.h"
-	"Contract.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/CommonDefs.h
-
-1557330714 source:/home/user/Desktop/tws-cpp/client/DefaultEWrapper.cpp
-	"StdAfx.h"
-	"DefaultEWrapper.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/DefaultEWrapper.h
-	"EWrapper.h"
-	"EWrapper_prototypes.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/EWrapper.h
-	<string>
-	<set>
-	<map>
-	<tuple>
-	<vector>
-	"CommonDefs.h"
-	"SoftDollarTier.h"
-	"DepthMktDataDescription.h"
-	"FamilyCode.h"
-	"NewsProvider.h"
-	"TickAttrib.h"
-	"HistogramEntry.h"
-	"bar.h"
-	"PriceIncrement.h"
-	"HistoricalTick.h"
-	"HistoricalTickBidAsk.h"
-	"HistoricalTickLast.h"
-	"EWrapper_prototypes.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/SoftDollarTier.h
-	"platformspecific.h"
-	<string>
-
-1557330714 /home/user/Desktop/tws-cpp/client/DepthMktDataDescription.h
-	<limits.h>
-	<string>
-
-1557330714 /home/user/Desktop/tws-cpp/client/FamilyCode.h
-	<string>
-
-1557330714 /home/user/Desktop/tws-cpp/client/NewsProvider.h
-	<string>
-
-1557330714 /home/user/Desktop/tws-cpp/client/TickAttrib.h
-
-1557330714 /home/user/Desktop/tws-cpp/client/HistogramEntry.h
-
-1557330714 /home/user/Desktop/tws-cpp/client/bar.h
-	<string>
-
-1557330714 /home/user/Desktop/tws-cpp/client/PriceIncrement.h
-
-1557330714 /home/user/Desktop/tws-cpp/client/EWrapper_prototypes.h
-
-1557330714 source:/home/user/Desktop/tws-cpp/client/EClient.cpp
-	"StdAfx.h"
-	"EPosixClientSocketPlatform.h"
-	"EClient.h"
-	"EWrapper.h"
-	"TwsSocketClientErrors.h"
-	"Contract.h"
-	"Order.h"
-	"OrderState.h"
-	"Execution.h"
-	"ScannerSubscription.h"
-	"CommissionReport.h"
-	"EDecoder.h"
-	"EMessage.h"
-	"ETransport.h"
-	"FamilyCode.h"
-	<sstream>
-	<iomanip>
-	<algorithm>
-	<stdio.h>
-	<string.h>
-	<assert.h>
-
-1557330714 /home/user/Desktop/tws-cpp/client/EPosixClientSocketPlatform.h
-	<WinSock2.h>
-	<time.h>
-	<arpa/inet.h>
-	<netdb.h>
-	<errno.h>
-	<sys/select.h>
-	<sys/fcntl.h>
-	<unistd.h>
-
-1557330714 /home/user/Desktop/tws-cpp/client/TwsSocketClientErrors.h
-	<string>
-
-1557330714 /home/user/Desktop/tws-cpp/client/Order.h
-	"TagValue.h"
-	"OrderCondition.h"
-	"SoftDollarTier.h"
-	<float.h>
-	<limits.h>
-
-1557330714 /home/user/Desktop/tws-cpp/client/OrderState.h
-	"Order.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/Execution.h
-	<string>
-
-1557330714 /home/user/Desktop/tws-cpp/client/ScannerSubscription.h
-	<float.h>
-	<limits.h>
-	<string>
-
-1557330714 /home/user/Desktop/tws-cpp/client/CommissionReport.h
-	<string>
-
-1557330714 /home/user/Desktop/tws-cpp/client/EMessage.h
-	<vector>
-	"platformspecific.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/ETransport.h
-
-1557330714 source:/home/user/Desktop/tws-cpp/client/EClientSocket.cpp
-	"StdAfx.h"
-	"EPosixClientSocketPlatform.h"
-	"EClientSocket.h"
-	"TwsSocketClientErrors.h"
-	"EWrapper.h"
-	"EDecoder.h"
-	"EReaderSignal.h"
-	"EReader.h"
-	"EMessage.h"
-	<string.h>
-	<assert.h>
-	<ostream>
-
-1557330714 /home/user/Desktop/tws-cpp/client/EClientSocket.h
-	<atomic>
-	"EClient.h"
-	"EClientMsgSink.h"
-	"ESocket.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/EClientMsgSink.h
-
-1557330714 /home/user/Desktop/tws-cpp/client/ESocket.h
-	"ETransport.h"
-	<vector>
-
-1557330714 /home/user/Desktop/tws-cpp/client/EReaderSignal.h
-
-1557330714 /home/user/Desktop/tws-cpp/client/EReader.h
-	<atomic>
-	<deque>
-	"platformspecific.h"
-	"EDecoder.h"
-	"EMutex.h"
-	"EReaderOSSignal.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/EMutex.h
-	<mutex>
-	"platformspecific.h"
-	<Windows.h>
-
-1557330714 /home/user/Desktop/tws-cpp/client/EReaderOSSignal.h
-	"EReaderSignal.h"
-	<stdexcept>
-	"platformspecific.h"
-
-1557330714 source:/home/user/Desktop/tws-cpp/client/EDecoder.cpp
-	"StdAfx.h"
-	"EWrapper.h"
-	"Order.h"
-	"Contract.h"
-	"OrderState.h"
-	"Execution.h"
-	"FamilyCode.h"
-	"CommissionReport.h"
-	"TwsSocketClientErrors.h"
-	"EDecoder.h"
-	"EClientMsgSink.h"
-	"PriceIncrement.h"
-	"EOrderDecoder.h"
-	<string.h>
-	<cstdlib>
-	<sstream>
-	<assert.h>
-	<string>
-	<bitset>
-
-1557330714 /home/user/Desktop/tws-cpp/client/EOrderDecoder.h
-	"platformspecific.h"
-	"Contract.h"
-	"Order.h"
-	"OrderState.h"
-	"EDecoder.h"
-
-1557330714 source:/home/user/Desktop/tws-cpp/client/EMessage.cpp
-	"StdAfx.h"
-	"EMessage.h"
-
-1557330714 source:/home/user/Desktop/tws-cpp/client/EMutex.cpp
-	"StdAfx.h"
-	"EMutex.h"
-
-1557330714 source:/home/user/Desktop/tws-cpp/client/EOrderDecoder.cpp
-	"StdAfx.h"
-	"EOrderDecoder.h"
-	<string.h>
-	<cstdlib>
-	<sstream>
-	<assert.h>
-	<string>
-	<bitset>
-
-1557330714 source:/home/user/Desktop/tws-cpp/client/EReader.cpp
-	"StdAfx.h"
-	"Contract.h"
-	"EDecoder.h"
-	"EMutex.h"
-	"EReader.h"
-	"EClientSocket.h"
-	"EPosixClientSocketPlatform.h"
-	"EReaderSignal.h"
-	"EMessage.h"
-	"DefaultEWrapper.h"
-
-1557330714 source:/home/user/Desktop/tws-cpp/client/EReaderOSSignal.cpp
-	"StdAfx.h"
-	"EReaderOSSignal.h"
-	<time.h>
-	<sys/time.h>
-
 1585896570 source:/home/user/Desktop/tws-cpp/AvailableAlgoParams.cpp
 	"StdAfx.h"
 	"AvailableAlgoParams.h"
@@ -367,137 +55,90 @@
 1557330708 /home/user/Desktop/tws-cpp/AvailableAlgoParams.h
 	<string>
 
-1557330714 source:/home/user/Desktop/tws-cpp/client/ESocket.cpp
-	"StdAfx.h"
-	"EMessage.h"
-	"ESocket.h"
-	<assert.h>
-	<sys/socket.h>
-
-1557330714 source:/home/user/Desktop/tws-cpp/client/executioncondition.cpp
-	"StdAfx.h"
-	"executioncondition.h"
-	"EDecoder.h"
-	"EClient.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/executioncondition.h
+1557330714 /home/user/Desktop/tws-cpp/Order.h
+	"TagValue.h"
 	"OrderCondition.h"
-
-1557330714 source:/home/user/Desktop/tws-cpp/client/MarginCondition.cpp
-	"StdAfx.h"
-	"MarginCondition.h"
-	<sstream>
-
-1557330714 /home/user/Desktop/tws-cpp/client/MarginCondition.h
-	"OperatorCondition.h"
-
-1557330714 source:/home/user/Desktop/tws-cpp/client/OperatorCondition.cpp
-	"StdAfx.h"
-	"OperatorCondition.h"
-	"EDecoder.h"
-	"EClient.h"
-
-1557330714 source:/home/user/Desktop/tws-cpp/client/OrderCondition.cpp
-	"StdAfx.h"
-	"OrderCondition.h"
-	"executioncondition.h"
-	"MarginCondition.h"
-	"TimeCondition.h"
-	"PercentChangeCondition.h"
-	"PriceCondition.h"
-	"VolumeCondition.h"
-	"EDecoder.h"
-	"EClient.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/TimeCondition.h
-	"OperatorCondition.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/PercentChangeCondition.h
-	"ContractCondition.h"
-	"Order.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/PriceCondition.h
-	"ContractCondition.h"
-
-1557330714 /home/user/Desktop/tws-cpp/client/VolumeCondition.h
-	"ContractCondition.h"
-
-1557330714 source:/home/user/Desktop/tws-cpp/client/PercentChangeCondition.cpp
-	"StdAfx.h"
-	"PercentChangeCondition.h"
-	<sstream>
-
-1557330714 source:/home/user/Desktop/tws-cpp/client/PriceCondition.cpp
-	"StdAfx.h"
-	"PriceCondition.h"
-	"EDecoder.h"
-	"EClient.h"
-	<sstream>
-
-1557330714 source:/home/user/Desktop/tws-cpp/client/SoftDollarTier.cpp
-	"StdAfx.h"
 	"SoftDollarTier.h"
+	<float.h>
+	<limits.h>
 
-1557330714 source:/home/user/Desktop/tws-cpp/client/StdAfx.cpp
+1557330714 /home/user/Desktop/tws-cpp/TagValue.h
+	<string>
+	<vector>
+	<memory>
+
+1557330714 /home/user/Desktop/tws-cpp/OrderCondition.h
+	"IExternalizable.h"
+	<string>
+	"platformspecific.h"
+
+1557330714 /home/user/Desktop/tws-cpp/IExternalizable.h
+	<ios>
+
+1557330714 /home/user/Desktop/tws-cpp/SoftDollarTier.h
+	"platformspecific.h"
+	<string>
+
+1557330714 source:/home/user/Desktop/tws-cpp/ContractCondition.cpp
 	"StdAfx.h"
+	"ContractCondition.h"
+	"EDecoder.h"
+	"EClient.h"
 
-1557330714 source:/home/user/Desktop/tws-cpp/client/TimeCondition.cpp
-	"StdAfx.h"
-	"TimeCondition.h"
+1557330714 /home/user/Desktop/tws-cpp/ContractCondition.h
+	"OperatorCondition.h"
 
-1557330714 source:/home/user/Desktop/tws-cpp/client/VolumeCondition.cpp
-	"StdAfx.h"
-	"VolumeCondition.h"
-	<sstream>
+1557330714 /home/user/Desktop/tws-cpp/OperatorCondition.h
+	"OrderCondition.h"
 
-1588845419 source:/home/user/Desktop/tws-cpp/ContractSamples.cpp
+1557330714 /home/user/Desktop/tws-cpp/EDecoder.h
+	"platformspecific.h"
+	"Contract.h"
+	"HistoricalTick.h"
+	"HistoricalTickBidAsk.h"
+	"HistoricalTickLast.h"
+
+1557330714 /home/user/Desktop/tws-cpp/Contract.h
+	"TagValue.h"
+
+1557330714 /home/user/Desktop/tws-cpp/HistoricalTick.h
+
+1557330714 /home/user/Desktop/tws-cpp/HistoricalTickBidAsk.h
+	"TickAttribBidAsk.h"
+
+1557330714 /home/user/Desktop/tws-cpp/TickAttribBidAsk.h
+
+1557330714 /home/user/Desktop/tws-cpp/HistoricalTickLast.h
+	"TickAttribLast.h"
+	<string>
+
+1557330714 /home/user/Desktop/tws-cpp/TickAttribLast.h
+
+1557330714 /home/user/Desktop/tws-cpp/EClient.h
+	<memory>
+	<string>
+	<vector>
+	<ostream>
+	"platformspecific.h"
+	"CommonDefs.h"
+	"TagValue.h"
+	"Contract.h"
+
+1557330714 /home/user/Desktop/tws-cpp/CommonDefs.h
+
+1592404030 source:/home/user/Desktop/tws-cpp/ContractSamples.cpp
 	"StdAfx.h"
 	"ContractSamples.h"
 	"Contract.h"
 
-1588845492 /home/user/Desktop/tws-cpp/ContractSamples.h
+1592404030 /home/user/Desktop/tws-cpp/ContractSamples.h
 
-1557330714 source:/home/user/Desktop/tws-cpp/StdAfx.cpp
+1557330714 source:/home/user/Desktop/tws-cpp/DefaultEWrapper.cpp
 	"StdAfx.h"
+	"DefaultEWrapper.h"
 
-1585896500 source:/home/user/Desktop/tws-cpp/ScannerSubscriptionSamples.cpp
-	"StdAfx.h"
-	"ScannerSubscription.h"
-	"ScannerSubscriptionSamples.h"
-
-1557330710 /home/user/Desktop/tws-cpp/ScannerSubscriptionSamples.h
-	<string>
-
-1557330714 /home/user/Desktop/tws-cpp/platformspecific.h
-	<WinSock2.h>
-	<Windows.h>
-	<time.h>
-	<arpa/inet.h>
-	<sys/time.h>
-	<sys/socket.h>
-	<netdb.h>
-	<errno.h>
-	<sys/select.h>
-	<sys/fcntl.h>
-	<mutex>
-	<unistd.h>
-	<pthread.h>
-
-1590570037 source:/home/user/Desktop/tws-cpp/Main.cpp
-	"StdAfx.h"
-	<stdio.h>
-	<stdlib.h>
-	<chrono>
-	<thread>
-	"TestCppClient.h"
-	<fstream>
-
-1585896555 /home/user/Desktop/tws-cpp/TestCppClient.h
+1557330714 /home/user/Desktop/tws-cpp/DefaultEWrapper.h
 	"EWrapper.h"
-	"EReaderOSSignal.h"
-	"EReader.h"
-	<memory>
-	<vector>
 	"EWrapper_prototypes.h"
 
 1557330714 /home/user/Desktop/tws-cpp/EWrapper.h
@@ -520,12 +161,6 @@
 	"HistoricalTickLast.h"
 	"EWrapper_prototypes.h"
 
-1557330714 /home/user/Desktop/tws-cpp/CommonDefs.h
-
-1557330714 /home/user/Desktop/tws-cpp/SoftDollarTier.h
-	"platformspecific.h"
-	<string>
-
 1557330714 /home/user/Desktop/tws-cpp/DepthMktDataDescription.h
 	<limits.h>
 	<string>
@@ -545,100 +180,7 @@
 
 1557330714 /home/user/Desktop/tws-cpp/PriceIncrement.h
 
-1557330714 /home/user/Desktop/tws-cpp/HistoricalTick.h
-
-1557330714 /home/user/Desktop/tws-cpp/HistoricalTickBidAsk.h
-	"TickAttribBidAsk.h"
-
-1557330714 /home/user/Desktop/tws-cpp/TickAttribBidAsk.h
-
-1557330714 /home/user/Desktop/tws-cpp/HistoricalTickLast.h
-	"TickAttribLast.h"
-	<string>
-
-1557330714 /home/user/Desktop/tws-cpp/TickAttribLast.h
-
 1557330714 /home/user/Desktop/tws-cpp/EWrapper_prototypes.h
-
-1557330714 /home/user/Desktop/tws-cpp/EReaderOSSignal.h
-	"EReaderSignal.h"
-	<stdexcept>
-	"platformspecific.h"
-
-1557330714 /home/user/Desktop/tws-cpp/EReaderSignal.h
-
-1557330714 /home/user/Desktop/tws-cpp/EReader.h
-	<atomic>
-	<deque>
-	"platformspecific.h"
-	"EDecoder.h"
-	"EMutex.h"
-	"EReaderOSSignal.h"
-
-1557330714 /home/user/Desktop/tws-cpp/EDecoder.h
-	"platformspecific.h"
-	"Contract.h"
-	"HistoricalTick.h"
-	"HistoricalTickBidAsk.h"
-	"HistoricalTickLast.h"
-
-1557330714 /home/user/Desktop/tws-cpp/Contract.h
-	"TagValue.h"
-
-1557330714 /home/user/Desktop/tws-cpp/TagValue.h
-	<string>
-	<vector>
-	<memory>
-
-1557330714 /home/user/Desktop/tws-cpp/EMutex.h
-	<mutex>
-	"platformspecific.h"
-	<Windows.h>
-
-1557330714 /home/user/Desktop/tws-cpp/Order.h
-	"TagValue.h"
-	"OrderCondition.h"
-	"SoftDollarTier.h"
-	<float.h>
-	<limits.h>
-
-1557330714 /home/user/Desktop/tws-cpp/OrderCondition.h
-	"IExternalizable.h"
-	<string>
-	"platformspecific.h"
-
-1557330714 /home/user/Desktop/tws-cpp/IExternalizable.h
-	<ios>
-
-1557330714 source:/home/user/Desktop/tws-cpp/ContractCondition.cpp
-	"StdAfx.h"
-	"ContractCondition.h"
-	"EDecoder.h"
-	"EClient.h"
-
-1557330714 /home/user/Desktop/tws-cpp/ContractCondition.h
-	"OperatorCondition.h"
-
-1557330714 /home/user/Desktop/tws-cpp/OperatorCondition.h
-	"OrderCondition.h"
-
-1557330714 /home/user/Desktop/tws-cpp/EClient.h
-	<memory>
-	<string>
-	<vector>
-	<ostream>
-	"platformspecific.h"
-	"CommonDefs.h"
-	"TagValue.h"
-	"Contract.h"
-
-1557330714 source:/home/user/Desktop/tws-cpp/DefaultEWrapper.cpp
-	"StdAfx.h"
-	"DefaultEWrapper.h"
-
-1557330714 /home/user/Desktop/tws-cpp/DefaultEWrapper.h
-	"EWrapper.h"
-	"EWrapper_prototypes.h"
 
 1557330714 source:/home/user/Desktop/tws-cpp/EClient.cpp
 	"StdAfx.h"
@@ -722,6 +264,26 @@
 	"ETransport.h"
 	<vector>
 
+1557330714 /home/user/Desktop/tws-cpp/EReaderSignal.h
+
+1557330714 /home/user/Desktop/tws-cpp/EReader.h
+	<atomic>
+	<deque>
+	"platformspecific.h"
+	"EDecoder.h"
+	"EMutex.h"
+	"EReaderOSSignal.h"
+
+1557330714 /home/user/Desktop/tws-cpp/EMutex.h
+	<mutex>
+	"platformspecific.h"
+	<Windows.h>
+
+1557330714 /home/user/Desktop/tws-cpp/EReaderOSSignal.h
+	"EReaderSignal.h"
+	<stdexcept>
+	"platformspecific.h"
+
 1557330714 source:/home/user/Desktop/tws-cpp/EDecoder.cpp
 	"StdAfx.h"
 	"EWrapper.h"
@@ -802,6 +364,23 @@
 1557330714 /home/user/Desktop/tws-cpp/executioncondition.h
 	"OrderCondition.h"
 
+1590570037 source:/home/user/Desktop/tws-cpp/Main.cpp
+	"StdAfx.h"
+	<stdio.h>
+	<stdlib.h>
+	<chrono>
+	<thread>
+	"TestCppClient.h"
+	<fstream>
+
+1585896555 /home/user/Desktop/tws-cpp/TestCppClient.h
+	"EWrapper.h"
+	"EReaderOSSignal.h"
+	"EReader.h"
+	<memory>
+	<vector>
+	"EWrapper_prototypes.h"
+
 1557330714 source:/home/user/Desktop/tws-cpp/MarginCondition.cpp
 	"StdAfx.h"
 	"MarginCondition.h"
@@ -841,6 +420,19 @@
 1557330714 /home/user/Desktop/tws-cpp/VolumeCondition.h
 	"ContractCondition.h"
 
+1585898661 source:/home/user/Desktop/tws-cpp/OrderSamples.cpp
+	"StdAfx.h"
+	"Order.h"
+	"OrderSamples.h"
+	"PriceCondition.h"
+	"executioncondition.h"
+	"MarginCondition.h"
+	"PercentChangeCondition.h"
+	"VolumeCondition.h"
+
+1557330710 /home/user/Desktop/tws-cpp/OrderSamples.h
+	<vector>
+
 1557330714 source:/home/user/Desktop/tws-cpp/PercentChangeCondition.cpp
 	"StdAfx.h"
 	"PercentChangeCondition.h"
@@ -853,11 +445,42 @@
 	"EClient.h"
 	<sstream>
 
+1585896500 source:/home/user/Desktop/tws-cpp/ScannerSubscriptionSamples.cpp
+	"StdAfx.h"
+	"ScannerSubscription.h"
+	"ScannerSubscriptionSamples.h"
+
+1557330710 /home/user/Desktop/tws-cpp/ScannerSubscriptionSamples.h
+	<string>
+
 1557330714 source:/home/user/Desktop/tws-cpp/SoftDollarTier.cpp
 	"StdAfx.h"
 	"SoftDollarTier.h"
 
-1590915847 source:/home/user/Desktop/tws-cpp/TestCppClient.cpp
+1557330714 source:/home/user/Desktop/tws-cpp/StdAfx.cpp
+	"StdAfx.h"
+
+1557330714 source:/home/user/Desktop/tws-cpp/TimeCondition.cpp
+	"StdAfx.h"
+	"TimeCondition.h"
+
+1585897459 source:/home/user/Desktop/tws-cpp/Utils.cpp
+	"StdAfx.h"
+	"Utils.h"
+	<iostream>
+	"platformspecific.h"
+
+1557330710 /home/user/Desktop/tws-cpp/Utils.h
+	<vector>
+	<cstdint>
+	<string>
+
+1557330714 source:/home/user/Desktop/tws-cpp/VolumeCondition.cpp
+	"StdAfx.h"
+	"VolumeCondition.h"
+	<sstream>
+
+1592407936 source:/home/user/Desktop/tws-cpp/TestCppClient.cpp
 	"StdAfx.h"
 	"TestCppClient.h"
 	"EClientSocket.h"
@@ -888,81 +511,8 @@
 	<ctime>
 	<fstream>
 	<cstdint>
-
-1557330710 /home/user/Desktop/tws-cpp/OrderSamples.h
-	<vector>
+	<string.h>
 
 1557330708 /home/user/Desktop/tws-cpp/FAMethodSamples.h
 	<string>
-
-1557330710 /home/user/Desktop/tws-cpp/Utils.h
-	<vector>
-	<cstdint>
-	<string>
-
-1557330714 source:/home/user/Desktop/tws-cpp/TimeCondition.cpp
-	"StdAfx.h"
-	"TimeCondition.h"
-
-1557330714 source:/home/user/Desktop/tws-cpp/VolumeCondition.cpp
-	"StdAfx.h"
-	"VolumeCondition.h"
-	<sstream>
-
-1585897459 source:/home/user/Desktop/tws-cpp/Utils.cpp
-	"StdAfx.h"
-	"Utils.h"
-	<iostream>
-	"platformspecific.h"
-
-1585898661 source:/home/user/Desktop/tws-cpp/OrderSamples.cpp
-	"StdAfx.h"
-	"Order.h"
-	"OrderSamples.h"
-	"PriceCondition.h"
-	"executioncondition.h"
-	"MarginCondition.h"
-	"PercentChangeCondition.h"
-	"VolumeCondition.h"
-
-1587031189 source:/home/user/Desktop/tws-cpp/Aviad.cpp
-	"StdAfx.h"
-	"Aviad.h"
-	"EClientSocket.h"
-	"EPosixClientSocketPlatform.h"
-	"Contract.h"
-	"Order.h"
-	"OrderState.h"
-	"Execution.h"
-	"CommissionReport.h"
-	"ContractSamples.h"
-	"OrderSamples.h"
-	"ScannerSubscription.h"
-	"ScannerSubscriptionSamples.h"
-	"executioncondition.h"
-	"PriceCondition.h"
-	"MarginCondition.h"
-	"PercentChangeCondition.h"
-	"TimeCondition.h"
-	"VolumeCondition.h"
-	"AvailableAlgoParams.h"
-	"FAMethodSamples.h"
-	"CommonDefs.h"
-	"AccountSummaryTags.h"
-	"Utils.h"
-	<stdio.h>
-	<chrono>
-	<iostream>
-	<thread>
-	<ctime>
-	<fstream>
-	<cstdint>
-
-1587031190 /home/user/Desktop/tws-cpp/Aviad.h
-	"EWrapper.h"
-	"EReaderOSSignal.h"
-	"EReader.h"
-	<memory>
-	<vector>
-	"EWrapper_prototypes.h"
 

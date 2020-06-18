@@ -22,12 +22,35 @@
 	/*
      * Usually, the easiest way to define a Stock/CASH contract is through these four attributes.
      */
-Contract ContractSamples::DLG(){
+Contract ContractSamples::ULVR(){
 	//! [IBKR contract]
 	Contract contract;
-	contract.symbol = "DLG";
+	contract.symbol = "ULVR";
 	contract.secType = "STK";
 	contract.currency = "GBP";
+	contract.exchange = "SMART";
+	contract.primaryExchange= "LSE";
+	//! [IBKR contract]
+	return contract;
+}
+
+Contract ContractSamples::ONTX(){
+	//! [IBKR contract]
+	Contract contract;
+	contract.symbol = "ONTX";
+	contract.secType = "STK";
+	contract.currency = "USD";
+	contract.exchange = "SMART";
+	//! [IBKR contract]
+	return contract;
+}
+
+Contract ContractSamples::INO(){
+	//! [IBKR contract]
+	Contract contract;
+	contract.symbol = "INO";
+	contract.secType = "STK";
+	contract.currency = "USD";
 	contract.exchange = "SMART";
 	//! [IBKR contract]
 	return contract;

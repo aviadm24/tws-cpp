@@ -8,7 +8,9 @@ struct Contract;
 
 class ContractSamples {
 public:
-    static Contract DLG();
+    static Contract ULVR();
+    static Contract INO();
+    static Contract ONTX();
     static Contract QQQ();
 	static Contract IBMBond();
 	static Contract IBKRStk();
