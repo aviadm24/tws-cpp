@@ -51,6 +51,7 @@ bool buy = false;
 //std::ifstream fin("data.txt");
 std::string stockName;
 int stockAmount;
+const Contract& myContract = ContractSamples::ULVR();
 //
 //while (fin >> stockName >> stockAmount)
 //{
@@ -1377,8 +1378,8 @@ void TestCppClient::reqTickByTickData()
     /*** Requesting tick-by-tick data (only refresh) ***/
 
     //m_pClient->reqTickByTickData(20001, ContractSamples::QQQ(), "Last", 0, false);
-    //m_pClient->reqTickByTickData(20001, ContractSamples::ONTX(), "Last", 0, false);
-    m_pClient->reqTickByTickData(20001, ContractSamples::INO(), "Last", 0, false);
+    m_pClient->reqTickByTickData(20001, ContractSamples::QQQ(), "Last", 0, false);
+    //m_pClient->reqTickByTickData(20001, myContract, "Last", 0, false);
     //m_pClient->reqTickByTickData(20002, ContractSamples::EuropeanStock(), "AllLast", 0, false);
     //m_pClient->reqTickByTickData(20003, ContractSamples::EuropeanStock(), "BidAsk", 0, true);
     //m_pClient->reqTickByTickData(20004, ContractSamples::EurGbpFx(), "MidPoint", 0, false);
@@ -2156,8 +2157,8 @@ void TestCppClient::tickByTickAllLast(int reqId, int tickType, time_t time, doub
     if (one == false && myPos == 0 && myFilled == 200){
         firstPrice = price;
 //        std::cout << "price:"<< myPrice<< std::endl;
-        m_pClient->placeOrder(m_orderId++, ContractSamples::INO(), OrderSamples::MarketOrder("BUY", stockAmount/2));
-        m_pClient->placeOrder(m_orderId++, ContractSamples::INO(), OrderSamples::StopLimit("SELL", stockAmount, firstPrice, firstPrice));
+        m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::MarketOrder("BUY", stockAmount/2));
+        m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::StopLimit("SELL", stockAmount, firstPrice, firstPrice));
 //        std::this_thread::sleep_for(std::chrono::seconds(1));
 //        if (price > firstPrice){
 //            m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::StopLimit("SELL", stockAmount, firstPrice, firstPrice));
@@ -2180,14 +2181,14 @@ void TestCppClient::tickByTickAllLast(int reqId, int tickType, time_t time, doub
         if (myPos == stockAmount/2 && sell == true  && price > firstPrice-0.002){ // (price > firstPrice) && (sell == true)&& (myFilled ==  stockAmount)
 //            m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::MarketOrder("BUY", stockAmount));
             std::cout << "++++++++++++++BUY+++++++++++++++++++++:"<< myPos<< std::endl;
-            m_pClient->placeOrder(m_orderId++, ContractSamples::INO(), OrderSamples::StopLimit("SELL", stockAmount, firstPrice-0.002, firstPrice-0.002));
+            m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::StopLimit("SELL", stockAmount, firstPrice-0.002, firstPrice-0.002));
             buy = true;
             sell = false;
         }
         if (myPos == -stockAmount/2 && buy == true && price < firstPrice-0.002){ //price < firstPrice && buy == true&& myFilled ==  stockAmount
             std::cout << "++++++++++++++SELL+++++++++++++++++++++:"<< myPos<< std::endl;
 //            m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::MarketOrder("SELL", stockAmount));
-            m_pClient->placeOrder(m_orderId++, ContractSamples::INO(), OrderSamples::StopLimit("BUY", stockAmount, firstPrice-0.002, firstPrice-0.002));
+            m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::StopLimit("BUY", stockAmount, firstPrice-0.002, firstPrice-0.002));
             sell = true;
             buy = false;
         }

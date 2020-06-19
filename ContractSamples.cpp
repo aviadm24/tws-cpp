@@ -34,6 +34,18 @@ Contract ContractSamples::ULVR(){
 	return contract;
 }
 
+Contract ContractSamples::TLW(){
+	//! [IBKR contract]
+	Contract contract;
+	contract.symbol = "TLW";
+	contract.secType = "STK";
+	contract.currency = "GBP";
+	contract.exchange = "SMART";
+	contract.primaryExchange= "LSE";
+	//! [IBKR contract]
+	return contract;
+}
+
 Contract ContractSamples::ONTX(){
 	//! [IBKR contract]
 	Contract contract;

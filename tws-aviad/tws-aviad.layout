@@ -2,29 +2,14 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+	<File name="../OrderSamples.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="27221" topLine="560" />
+		</Cursor>
+	</File>
 	<File name="../EClient.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="1881" />
-		</Cursor>
-	</File>
-	<File name="../EReader.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6238" topLine="268" />
-		</Cursor>
-	</File>
-	<File name="../EClient.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="14286" topLine="390" />
-		</Cursor>
-	</File>
-	<File name="../TestCppClient.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="81499" topLine="2150" />
-		</Cursor>
-	</File>
-	<File name="../Main.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="661" topLine="18" />
 		</Cursor>
 	</File>
 	<File name="../ContractSamples.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -32,9 +17,29 @@
 			<Cursor1 position="384" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="../ContractSamples.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="../EDecoder.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1819" topLine="36" />
+			<Cursor1 position="61488" topLine="2486" />
+		</Cursor>
+	</File>
+	<File name="../EClient.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="14286" topLine="390" />
+		</Cursor>
+	</File>
+	<File name="../EReader.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6238" topLine="268" />
+		</Cursor>
+	</File>
+	<File name="../Main.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="661" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="../TestCppClient.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1149" topLine="35" />
 		</Cursor>
 	</File>
 	<File name="../EOrderDecoder.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -42,19 +47,14 @@
 			<Cursor1 position="0" topLine="123" />
 		</Cursor>
 	</File>
-	<File name="../OrderSamples.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="../TestCppClient.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="27221" topLine="560" />
+			<Cursor1 position="45889" topLine="1371" />
 		</Cursor>
 	</File>
-	<File name="../EDecoder.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="../ContractSamples.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="61488" topLine="2486" />
-		</Cursor>
-	</File>
-	<File name="../TestCppClient.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1149" topLine="35" />
+			<Cursor1 position="1260" topLine="18" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

@@ -9,6 +9,7 @@ struct Contract;
 class ContractSamples {
 public:
     static Contract ULVR();
+    static Contract TLW();
     static Contract INO();
     static Contract ONTX();
     static Contract QQQ();
