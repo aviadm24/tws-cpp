@@ -27,6 +27,8 @@ int main()
         cout << name << var1 << endl;
     }
     fin.close();
+
+    cout << name.str_c << endl;
 //    ifstream inputFile("data.txt");
 //    string line;
 //

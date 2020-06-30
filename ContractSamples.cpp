@@ -28,7 +28,7 @@ Contract ContractSamples::ULVR(){
 	contract.symbol = "ULVR";
 	contract.secType = "STK";
 	contract.currency = "GBP";
-	contract.exchange = "SMART";
+	contract.exchange = "LSE";
 	contract.primaryExchange= "LSE";
 	//! [IBKR contract]
 	return contract;

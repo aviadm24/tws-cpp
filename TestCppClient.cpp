@@ -564,15 +564,21 @@ void TestCppClient::realTimeBars()
 {
 	/*** Requesting real time bars ***/
 	//! [reqrealtimebars]
-	m_pClient->reqRealTimeBars(3001, ContractSamples::EurGbpFx(), 5, "MIDPOINT", true, TagValueListSPtr());
+	//m_pClient->reqRealTimeBars(3001, ContractSamples::EurGbpFx(), 5, "MIDPOINT", true, TagValueListSPtr());
+//	m_pClient->reqIds(+1);
+    m_pClient->reqPositions();
+    std::cout << "pos:"<< myPos<< std::endl;
+	m_pClient->reqMktData(1001, ContractSamples::ULVR(), "", false, false, TagValueListSPtr());
+
 	//! [reqrealtimebars]
-	std::this_thread::sleep_for(std::chrono::seconds(2));
+	//std::this_thread::sleep_for(std::chrono::seconds(2));
 	/*** Canceling real time bars ***/
     //! [cancelrealtimebars]
-	m_pClient->cancelRealTimeBars(3001);
+	//m_pClient->cancelMktData(1003);
     //! [cancelrealtimebars]
 
 	m_state = ST_REALTIMEBARS_ACK;
+
 }
 
 void TestCppClient::marketDataType()
@@ -1378,8 +1384,9 @@ void TestCppClient::reqTickByTickData()
     /*** Requesting tick-by-tick data (only refresh) ***/
 
     //m_pClient->reqTickByTickData(20001, ContractSamples::QQQ(), "Last", 0, false);
-    m_pClient->reqTickByTickData(20001, ContractSamples::QQQ(), "Last", 0, false);
-    //m_pClient->reqTickByTickData(20001, myContract, "Last", 0, false);
+    //m_pClient->reqTickByTickData(20001, ContractSamples::QQQ(), "Last", 0, false);
+
+    m_pClient->reqTickByTickData(20002, myContract, "Last", 0, false);
     //m_pClient->reqTickByTickData(20002, ContractSamples::EuropeanStock(), "AllLast", 0, false);
     //m_pClient->reqTickByTickData(20003, ContractSamples::EuropeanStock(), "BidAsk", 0, true);
     //m_pClient->reqTickByTickData(20004, ContractSamples::EurGbpFx(), "MidPoint", 0, false);
@@ -1449,6 +1456,7 @@ void TestCppClient::nextValidId( OrderId orderId)
     //m_state = ST_PNL;
 	//m_state = ST_DELAYEDTICKDATAOPERATION;
 	//m_state = ST_MARKETDEPTHOPERATION;
+
 	//m_state = ST_REALTIMEBARS;
 	//m_state = ST_MARKETDATATYPE;
 	//m_state = ST_HISTORICALDATAREQUESTS;
@@ -1510,14 +1518,58 @@ void TestCppClient::error(int id, int errorCode, const std::string& errorString)
 //! [tickprice]
 void TestCppClient::tickPrice( TickerId tickerId, TickType field, double price, const TickAttrib& attribs) {
 	//printf( "Tick Price. Ticker Id: %ld, Field: %d, Price: %g, CanAutoExecute: %d, PastLimit: %d, PreOpen: %d\n", tickerId, (int)field, price, attribs.canAutoExecute, attribs.pastLimit, attribs.preOpen);
-    printf("price!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: %g\n", price);
+    //printf("price!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: %g\n", price);
+    m_pClient->reqPositions();
     myPrice = price;
+    if (one == false && myPos == 0 && myFilled == 200){
+        firstPrice = price;
+        m_pClient->placeOrder(m_orderId++, ContractSamples::ULVR(), OrderSamples::MarketOrder("BUY", stockAmount/2));
+        m_pClient->placeOrder(m_orderId++, ContractSamples::ULVR(), OrderSamples::StopLimit("SELL", stockAmount, firstPrice+0.00, firstPrice+0.00));
+        printf("\nstop limit order - %d", m_orderId);
+        buy = true;
+        one = true;
+
+    }else{
+        std::cout << "\nmyPos:"<< myPos<< std::endl;
+        std::cout << "sell:"<< sell<< std::endl;
+        std::cout << "buy:"<< buy<< std::endl;
+        std::cout << "price:"<< price<<" firstPrice: "<< firstPrice<< std::endl;
+        if (myPos == stockAmount/2 && sell == true  && price > firstPrice+1){ // (price > firstPrice) && (sell == true)&& (myFilled ==  stockAmount)
+            std::cout << "++++++++++++++BUY+++++++++++++++++++++:"<< myPos<< std::endl;
+            m_pClient->placeOrder(m_orderId++, ContractSamples::ULVR(), OrderSamples::StopLimit("SELL", stockAmount, firstPrice, firstPrice));
+            buy = true;
+            sell = false;
+        }
+        if (myPos == -stockAmount/2 && buy == true && price < firstPrice-1){ //price < firstPrice && buy == true&& myFilled ==  stockAmount
+            std::cout << "++++++++++++++SELL+++++++++++++++++++++:"<< myPos<< std::endl;
+            m_pClient->placeOrder(m_orderId++, ContractSamples::ULVR(), OrderSamples::StopLimit("BUY", stockAmount, firstPrice, firstPrice));
+            sell = true;
+            buy = false;
+        }
+        if (price > firstPrice+1 && myPos == -100){
+            //m_pClient->cancelOrder(m_orderId);
+            m_pClient->reqGlobalCancel();
+            printf("canceled - %d", m_orderId);
+            sell = true;
+            buy = false;
+        }
+        if (price < firstPrice-1 && myPos == 100){
+            //m_pClient->cancelOrder(m_orderId);
+            m_pClient->reqGlobalCancel();
+            printf("canceled - %d", m_orderId);
+            sell = false;
+            buy = true;
+        }
+
+    }
+
+
 }
 //! [tickprice]
 
 //! [ticksize]
 void TestCppClient::tickSize( TickerId tickerId, TickType field, int size) {
-	printf( "Tick Size. Ticker Id: %ld, Field: %d, Size: %d\n", tickerId, (int)field, size);
+	//printf( "Tick Size. Ticker Id: %ld, Field: %d, Size: %d\n", tickerId, (int)field, size);
 }
 //! [ticksize]
 
@@ -1550,7 +1602,7 @@ void TestCppClient::tickEFP(TickerId tickerId, TickType tickType, double basisPo
 void TestCppClient::orderStatus(OrderId orderId, const std::string& status, double filled,
 		double remaining, double avgFillPrice, int permId, int parentId,
 		double lastFillPrice, int clientId, const std::string& whyHeld, double mktCapPrice){
-    //printf("Filled!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: %g\n", filled);
+    printf("Filled!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: %g\n", filled);
     myFilled = filled;
 	//printf("OrderStatus. Id: %ld, Status: %s, Filled: %g, Remaining: %g, AvgFillPrice: %g, PermId: %d, LastFillPrice: %g, ClientId: %d, WhyHeld: %s, MktCapPrice: %g\n", orderId, status.c_str(), filled, remaining, avgFillPrice, permId, lastFillPrice, clientId, whyHeld.c_str(), mktCapPrice);
 }
@@ -1797,6 +1849,7 @@ void TestCppClient::scannerDataEnd(int reqId) {
 void TestCppClient::realtimeBar(TickerId reqId, long time, double open, double high, double low, double close,
                                 long volume, double wap, int count) {
 	printf( "RealTimeBars. %ld - Time: %ld, Open: %g, High: %g, Low: %g, Close: %g, Volume: %ld, Count: %d, WAP: %g\n", reqId, time, open, high, low, close, volume, count, wap);
+//	printf( "test+++++++++++++++++++");
 }
 //! [realtimebar]
 
@@ -1812,6 +1865,7 @@ void TestCppClient::deltaNeutralValidation(int reqId, const DeltaNeutralContract
 
 //! [ticksnapshotend]
 void TestCppClient::tickSnapshotEnd(int reqId) {
+    printf( "test+++++++++++++++++++");
 	printf( "TickSnapshotEnd: %d\n", reqId);
 }
 //! [ticksnapshotend]
@@ -1833,7 +1887,14 @@ void TestCppClient::position( const std::string& account, const Contract& contra
 	//printf( "Position. %s - Symbol: %s, SecType: %s, Currency: %s, Position: %g, Avg Cost: %g\n", account.c_str(), contract.symbol.c_str(), contract.secType.c_str(), contract.currency.c_str(), position, avgCost);
 //    std::cout << "test: " << &contract.symbol.c_str() << std::endl;
     myPos = position;
-    //printf("position+++++++++++++++: %s \n", strlen(contract.symbol.c_str()));
+    //printf("position+++++++++++++++: %s \n", contract.symbol.c_str());
+    //printf("position+++++++++++++++: %g \n", myPos);
+
+    //https://stackoverflow.com/questions/18437430/comparing-non-null-terminated-char-arrays
+
+    //unsigned char str[]="gangadhar", str1[]="ganga";
+    //if(!strncmp(str,str1,5))
+
 //    if (contract.symbol.c_str() == "QQQ")
 //        {
 //        printf("position+++++++++++++++: %g", position);
@@ -2156,17 +2217,9 @@ void TestCppClient::tickByTickAllLast(int reqId, int tickType, time_t time, doub
 
     if (one == false && myPos == 0 && myFilled == 200){
         firstPrice = price;
-//        std::cout << "price:"<< myPrice<< std::endl;
         m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::MarketOrder("BUY", stockAmount/2));
         m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::StopLimit("SELL", stockAmount, firstPrice, firstPrice));
 //        std::this_thread::sleep_for(std::chrono::seconds(1));
-//        if (price > firstPrice){
-//            m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::StopLimit("SELL", stockAmount, firstPrice, firstPrice));
-//        }
-//        else{
-//            m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::StopLimit("BUY", stockAmount, firstPrice, firstPrice));
-//        }
-
         buy = true;
         one = true;
 
@@ -2175,27 +2228,42 @@ void TestCppClient::tickByTickAllLast(int reqId, int tickType, time_t time, doub
         //std::cout << "price < firstPrice:"<< stockAmount << std::endl;
         std::cout << "myPos:"<< myPos<< std::endl;
         std::cout << "sell:"<< sell<< std::endl;
-        std::cout << "price:"<< price<<" firstPrice: "<< firstPrice-0.002<< std::endl;
+        std::cout << "buy:"<< buy<< std::endl;
+        std::cout << "price:"<< price<<" firstPrice: "<< firstPrice<< std::endl;
 //        std::cout << "buy:"<< buy<< std::endl;
 //        std::cout << ""<< std::endl;
-        if (myPos == stockAmount/2 && sell == true  && price > firstPrice-0.002){ // (price > firstPrice) && (sell == true)&& (myFilled ==  stockAmount)
+        if (myPos == stockAmount/2 && sell == true  && price > firstPrice+0.04){ // (price > firstPrice) && (sell == true)&& (myFilled ==  stockAmount)
 //            m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::MarketOrder("BUY", stockAmount));
             std::cout << "++++++++++++++BUY+++++++++++++++++++++:"<< myPos<< std::endl;
-            m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::StopLimit("SELL", stockAmount, firstPrice-0.002, firstPrice-0.002));
+            m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::StopLimit("SELL", stockAmount, firstPrice-0.04, firstPrice-0.04));
             buy = true;
             sell = false;
         }
-        if (myPos == -stockAmount/2 && buy == true && price < firstPrice-0.002){ //price < firstPrice && buy == true&& myFilled ==  stockAmount
+        if (myPos == -stockAmount/2 && buy == true && price < firstPrice-0.04){ //price < firstPrice && buy == true&& myFilled ==  stockAmount
             std::cout << "++++++++++++++SELL+++++++++++++++++++++:"<< myPos<< std::endl;
 //            m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::MarketOrder("SELL", stockAmount));
-            m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::StopLimit("BUY", stockAmount, firstPrice-0.002, firstPrice-0.002));
+            m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::StopLimit("BUY", stockAmount, firstPrice+0.04, firstPrice+0.04));
             sell = true;
             buy = false;
         }
-        if (myPos == 0 && myFilled == 200){
-//            m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::MarketOrder("BUY", stockAmount/2));
-            one = false;
+        if (price > firstPrice+1 && myPos == -100){
+            //m_pClient->cancelOrder(m_orderId);
+            m_pClient->reqGlobalCancel();
+            printf("canceled - %d", m_orderId);
+            sell = true;
+            buy = false;
         }
+        if (price < firstPrice-1 && myPos == 100){
+            //m_pClient->cancelOrder(m_orderId);
+            m_pClient->reqGlobalCancel();
+            printf("canceled - %d", m_orderId);
+            sell = false;
+            buy = true;
+        }
+//        if (myPos == 0 && myFilled == 200){
+////            m_pClient->placeOrder(m_orderId++, ContractSamples::QQQ(), OrderSamples::MarketOrder("BUY", stockAmount/2));
+//            one = false;
+//        }
         //std::cout << "price:"<< price<< std::endl;
     }
     m_pClient->reqPositions();
